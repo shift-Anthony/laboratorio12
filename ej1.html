@@ -1,11 +1,83 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Ejercicios de Programación en JavaScript</title>
+    <style>
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            background-color: #f7f9fc;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        h1 {
+            margin: 0;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        .contenedor-ejercicios {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            gap: 15px;
+        }
+
+        .ejercicio {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            text-align: center;
+            padding: 10px;
+            cursor: pointer;
+            font-weight: bold;
+            color: black;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .ejercicio:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            background-color: #e8f2ff;
+        }
+
+    </style>
 </head>
 <body>
-    <script src="/javascript/ej1.js"></script>
+
+
+
+<main>
+    <div class="contenedor-ejercicios">
+        <div class="ejercicio" onclick="ejecutar(1)">Ejercicio 1</div>
+        <div class="ejercicio" onclick="ejecutar(2)">Ejercicio 2</div>
+        <div class="ejercicio" onclick="ejecutar(3)">Ejercicio 3</div>
+        <div class="ejercicio" onclick="ejecutar(4)">Ejercicio 4</div>
+        <div class="ejercicio" onclick="ejecutar(5)">Ejercicio 5</div>
+        <div class="ejercicio" onclick="ejecutar(6)">Ejercicio 6</div>
+        <div class="ejercicio" onclick="ejecutar(7)">Ejercicio 7</div>
+        <div class="ejercicio" onclick="ejecutar(8)">Ejercicio 8</div>
+        <div class="ejercicio" onclick="ejecutar(9)">Ejercicio 9</div>
+        <div class="ejercicio" onclick="ejecutar(10)">Ejercicio 10</div>
+    </div>
+</main>
+
+<script>
+    function ejecutar(num) {
+        document.querySelectorAll('.script-ejercicio').forEach(s => s.remove());
+        const script = document.createElement('script');
+        script.src = `javascript/ej${num}.js?nocache=${Date.now()}`;
+        script.className = 'script-ejercicio';
+        script.onload = () => console.log(`✅ Ejercicio ${num} ejecutado`);
+        document.body.appendChild(script);
+    }
+</script>
+
 </body>
 </html>
