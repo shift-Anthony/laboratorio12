@@ -15,6 +15,7 @@ const operacionesMatematicas = () => {
     };
 };
 
+//ejecucion del codigo
 const misOperaciones = operacionesMatematicas();
 const num1 = 10;
 const num2 = 5;
@@ -28,8 +29,6 @@ const mensaje = `Operaciones con ${num1} y ${num2}:\n
 Suma: ${resSuma}
 Resta: ${resResta}
 Multiplicación: ${resMulti}
-División: ${resDivi}
-\nPrueba de error:
-${resError}`;
+División: ${resDivi}`;
 
 alert(mensaje);
