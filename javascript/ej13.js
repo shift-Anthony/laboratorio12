@@ -1,31 +1,24 @@
 function procesarTexto(texto) {
-
-  function limpiarEspacios(cadena) {
-    return cadena.replace(/\s+/g, ' ').trim();
-  }
-
-  function contarPalabras(cadena) {
-    if (cadena === "") {
-      return 0;
+    function limpiarEspacios(cadena) {
+        return cadena.replace(/\s+/g, '');
     }
-    return cadena.split(' ').length;
-  }
+    function contarPalabras(cadena) {
+        const textoLimpioParaConteo = cadena.replace(/\s+/g, ' ').trim();
+        if (textoLimpioParaConteo === "") return 0;
+        return textoLimpioParaConteo.split(' ').length;
+    }
 
-  const textoLimpio = limpiarEspacios(texto);
-  const numeroDePalabras = contarPalabras(textoLimpio);
-
-  return {
-    texto_original: texto,
-    texto_limpio: textoLimpio,
-    cantidad_palabras: numeroDePalabras
-  };
+    const textoTotalmenteLimpio = limpiarEspacios(texto);
+    const numeroDePalabras = contarPalabras(texto);
+    return {
+        texto_sin_espacios: textoTotalmenteLimpio,
+        cantidad_palabras: numeroDePalabras
+    };
 }
 
 
-// Ejecucion
+// Ejecucion 
 const miTexto = "   Hola    mundo,     esto es un   ejemplo.   ";
 const resultado = procesarTexto(miTexto);
-
-const mensajeAlerta = `Texto Limpio: ${resultado.texto_limpio}\nCantidad de Palabras: ${resultado.cantidad_palabras}`;
-
+const mensajeAlerta = `Texto Sin Espacios: ${resultado.texto_sin_espacios}\nCantidad de Palabras: ${resultado.cantidad_palabras}`;
 alert(mensajeAlerta);
